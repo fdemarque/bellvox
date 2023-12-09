@@ -1,0 +1,32 @@
+drop database if exists demarque;
+CREATE DATABASE demarque
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Portuguese_Brazil.1252'
+    LC_CTYPE = 'Portuguese_Brazil.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+drop table if exists users;
+drop table if exists music;
+
+create table users (
+   id numeric(9),
+   username varchar(300),
+   login varchar(100),
+   password varchar(100),
+   userrole numeric(3),
+   CONSTRAINT PK_users01 PRIMARY KEY (id)	
+);
+
+create table music (
+  id numeric(9),
+  nome varchar(400),
+  artista varchar(400),
+  duracao numeric(13),
+  CONSTRAINT PK_music PRIMARY KEY (id)	
+);
+
+insert into users values (1, 'Felipe Demarque', 'demarque', 'demarque', 1);
