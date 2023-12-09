@@ -4,12 +4,12 @@ import {Postgres} from "../Lib/postgres";
 import {json} from "express";
 import {JWT} from "../Lib/jwt";
 
-export class Signup extends ApiClass {
+export class SignUp extends ApiClass {
     
     async DoRequest(User: User, Request: any): Promise<any> {
         // Construir api
         return {
-            "resultado" : "cabeçado meupau"
+            "resultado" : "teste"
         }
     }
 

@@ -1,5 +1,5 @@
-import * as pg from "pg";
-import * as pg_essential from "pg-essential";
+import * as pg from 'pg';
+import * as pg_essential from 'pg-essential';
 import * as pg_promise from "pg-promise";
 import {Conf} from "./Conf";
 
