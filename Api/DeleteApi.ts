@@ -7,21 +7,20 @@ import { Crypto } from "../Lib/Crypto";
 
 export class DeleteApi extends ApiClass {
     async DoRequest(user: User, request: any): Promise<any> {
-        try {
+
+        // Verificando permissão do usuário
+        if (user.Userrole != 1){
+            throw "Usuario não possui permissao para deletar uma musica";
+        }else{
             // Deletando musica com base no id e nome
-            const deletedRecords = await Knex.getConnection()('music')
+            const deletedRecords = Knex.getConnection()('music')
                 .where("id", "=", request.id)
                 .del();
-
-            if (deletedRecords > 0) {
+            if (deletedRecords > 0){                  
                 return { success: true, message: "Música deletada" };
-            } else {
-                return { success: false, message: "Música não encontrada" };
+            }else{
+                throw "O id informado não corresponde à uma música"
             }
-        } catch (error) {
-            // Lidando com erro
-            console.error("Erro ao deletar musica:", error);
-            throw error;
         }
     }
 

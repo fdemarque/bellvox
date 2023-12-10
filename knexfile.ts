@@ -4,9 +4,9 @@ const config: Knex.Config = {
   client: 'pg',
   connection: {
     host: 'localhost',
-    user: 'seu_usuario',
-    password: 'sua_senha',
-    database: 'seu_banco_de_dados',
+    user: 'demarque',
+    password: '123',
+    database: 'demarque',
   },
   migrations: {
     tableName: 'knex_migrations',

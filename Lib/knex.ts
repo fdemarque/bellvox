@@ -3,6 +3,9 @@ import {Conf} from "./Conf";
 import { knex } from "knex";
 
 export class Knex {
+    select(arg0: string) {
+        throw new Error("Method not implemented.");
+    }
 
     private static DBInstance;
 

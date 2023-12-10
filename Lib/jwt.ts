@@ -43,7 +43,6 @@ export class JWT {
                 };
                 Opcoes["expiresIn"] = "1d";
                 _User = JSON.parse(_User);
-                // Limpando a propriedade exp para que expiresin funcione
                 if (_User["exp"])
                     delete _User["exp"];
                 jsonwebtoken.sign(_User,

@@ -22,7 +22,8 @@ export class LoginApi extends ApiClass {
             throw "Usuario inválido";
         const _User: User = {
             Login: _ResultSet[0].login,
-            Name: _ResultSet[0].username
+            Name: _ResultSet[0].username,
+            Userrole: _ResultSet[0].userrole
         }
 
         // Gerando um token JWT para o usuário autenticado
