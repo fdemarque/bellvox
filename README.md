@@ -23,12 +23,17 @@ O projeto "bellvox" é uma API desenvolvida para a plataforma de streaming de m�
 4. **Atualização de Informações de Música:**
    - **Endpoint:** `/update`
    - **Método:** `POST`
-   - **Descrição:** Usuários autenticados podem utilizar este endpoint para atualizar informações de uma música. O corpo da requisição deve incluir o nome da música (`name`), o nome do artista (`artist`), a coluna que deseja atualizar (`colunaAtualizar`), e o novo valor (`novoValor`) para essa coluna.
+   - **Descrição:** Usuários autenticados podem utilizar este endpoint para atualizar informações de uma música. O corpo da requisição deve incluir o nome da música (`name`), o nome do artista (`artist`), a coluna que deseja atualizar (`colunaAtualizar`), e o novo valor (`novoValor`) para essa coluna. Apenas usuários autorizados podem atualizar registros.
 
 5. **Exclusão de Música:**
    - **Endpoint:** `/delete/:id/:name`
    - **Método:** `DELETE`
-   - **Descrição:** Usuários autenticados podem excluir uma música com base no ID e no nome fornecidos na URL.
+   - **Descrição:** Usuários autenticados podem excluir uma música com base no ID e no nome fornecidos na URL. Apenas usuários autorizados podem remover registros.
+  
+6. **Adição de Música:**
+   - **Endpoint:** `/delete/:id/:name`
+   - **Método:** `POST`
+   - **Descrição:** Usuários autenticados podem adicionar uma música fornecendo os dados necessários.
 
 **Dependências:**
 - Express.js: Framework para construção de aplicativos web.
