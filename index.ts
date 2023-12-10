@@ -4,7 +4,6 @@ import {LoginApi} from "./Api/LoginApi";
 import {Knex} from "./Lib/knex";
 import {Crypto} from "./Lib/Crypto";
 import {Signup} from "./Api/SignUp";
-import {MusicApi} from "./Api/MusicApi";
 import {SearchApi} from "./Api/SearchApi";
 import {DeleteApi} from "./Api/DeleteApi";
 import {InsertApi} from "./Api/InsertApi";
@@ -16,7 +15,6 @@ class Index {
         console.log("Inicializando Api");
         HttpExpress.RegistrarServico(new LoginApi());
         HttpExpress.RegistrarServico(new Signup());
-        HttpExpress.RegistrarServico(new MusicApi());
         HttpExpress.RegistrarServico(new SearchApi());
         HttpExpress.RegistrarServico(new DeleteApi());
         HttpExpress.RegistrarServico(new InsertApi());
