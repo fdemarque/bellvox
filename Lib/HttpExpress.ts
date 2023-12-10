@@ -25,24 +25,28 @@ export class HttpExpress {
             const TipoRequest = Api.Method();
             switch (TipoRequest) {
                 case TypeMethod.delete:
+                    // Impressão no console para monitoramento
                     console.log(`Inicializando ${Api.api()}`)
                     app.delete(Api.api(), (Request, Response) => {
                         HttpExpress.TratamentoRequisicao(Request, Response, Api).then()
                     });
                     break;
                 case TypeMethod.get:
+                    // Impressão no console para monitoramento
                     console.log(`Inicializando ${Api.api()}`)
                     app.get(Api.api(), (Request, Response) => {
                         HttpExpress.TratamentoRequisicao(Request, Response, Api).then()
                     });
                     break;
                 case TypeMethod.post:
+                    // Impressão no console para monitoramento
                     console.log(`Inicializando ${Api.api()}`)
                     app.post(Api.api(), (Request, Response) => {
                         HttpExpress.TratamentoRequisicao(Request, Response, Api).then()
                     });
                     break;
                 case TypeMethod.put:
+                    // Impressão no console para monitoramento
                     console.log(`Inicializando ${Api.api()}`)
                     app.put(Api.api(), (Request, Response) => {
                         HttpExpress.TratamentoRequisicao(Request, Response, Api).then()
@@ -50,6 +54,7 @@ export class HttpExpress {
                     break;
             }
         }
+        // Impressão no console para monitoramento
         server.listen(Conf.port, () => {
             console.log(`Servidor inicializado corretamente na porta ${Conf.port}`);
         });
@@ -85,14 +90,6 @@ export class HttpExpress {
             Resp.Status = 0;
             // Verificando download
             Resp.ResultSet = Body && Body.JSON ? Result : JSON.stringify(Result);
-            /*let headers = {};
-            // IE8 does not allow domains to be specified, just the *
-            // headers["Access-Control-Allow-Origin"] = req.headers.origin;
-            headers["Access-Control-Allow-Origin"] = "*";
-            headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";
-            headers["Access-Control-Allow-Credentials"] = true;
-            headers["Access-Control-Max-Age"] = '86400'; // 24 hours
-            headers["Access-Control-Allow-Headers"] = "content-type, transaction, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since, X-File-Name, Cache-Control";*/
             Response.setHeader('Content-type', 'application/json');
             Response.setHeader('Access-Control-Allow-Origin', '*');
             if (Body.CUSTOMBODY)
@@ -147,7 +144,6 @@ export class HttpExpress {
             Response.setHeader('Access-Control-Allow-Origin', '*');
             Response.setHeader('Content-type', 'application/json');
             Response.json(ResponseModel);
-            // Response.status(503).send({error: "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>503 Service Unavailable</title>\n</head><body>\n<h1>Service Unavailable</h1>\n<p>The server is temporarily unable to service your\nrequest due to maintenance downtime or capacity\nproblems. Please try again later.</p>\n<hr>\n<address>Apache/2.4.18 (Ubuntu) Server at api.padariananuvem.com Port 443</address>\n</body></html>\n"});
         } catch (E) {
             console.log(E)
         }

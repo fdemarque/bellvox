@@ -9,8 +9,8 @@ export class InsertApi extends ApiClass {
     async DoRequest(user: User, request: any): Promise<any> {
         const { name, artist, duration, id } = request;
 
+        // Lidando com ausência de campos obrigatórios
         if (!name || !artist || !duration || !id) {
-            // Se algum dos campos obrigatórios estiver ausente, retorne um erro
             throw "Campos obrigatorios não fornecidos"
         }
 
