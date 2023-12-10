@@ -1,7 +1,7 @@
-**API Bellvox**
+**Bellvox**
 
 **Descrição:**
-O projeto "api-bellvox" é uma API desenvolvida para a plataforma Bellvox. Esta API fornece endpoints para autenticação de usuários, cadastro de novos usuários, busca e manipulação de informações relacionadas à música.
+O projeto "bellvox" é uma API desenvolvida para a plataforma de streaming de músicas fictícia Bellvox. Esta API fornece endpoints para autenticação de usuários, cadastro de novos usuários, busca e manipulação de informações relacionadas à música.
 
 **Recursos Principais:**
 
