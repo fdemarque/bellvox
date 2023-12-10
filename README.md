@@ -44,6 +44,3 @@ O projeto "bellvox" é uma API desenvolvida para a plataforma de streaming de m�
 
 **Contextualização:**
 - Este projeto foi desenvolvido como requisito avaliativo parcial para a disciplina de desenvolvimento web backend I, referente à graduação em Análise e Desenvolvimento de Sistemas.
-
-**Licença:**
-- Este projeto é distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
