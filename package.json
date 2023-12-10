@@ -7,22 +7,19 @@
     "dev": "concurrently --kill-others \"npm run tscwatch\" \"npm run nodemon\""
   },
   "dependencies": {
-    "@types/knex": "^0.16.1",
-    "@types/pg": "^8.10.9",
+    "bcrypt-nodejs": "0.0.3",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.3.0",
-    "knex": "^3.1.0",
-    "pg-essential": "^2.2.4",
-    "pg-promise": "^11.5.4",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "knex": "^3.1.0"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
-    "@types/node": "^10.17.60",
+    "@types/express": "^4.16.0",
+    "@types/knex": "^0.16.1",
+    "@types/node": "^10.12.21",
     "concurrently": "^4.0.1",
     "nodemon": "^3.0.2",
-    "pg": "^8.11.3",
+    "pg": "^8.7.1",
+    "md5": "^2.2.1",
     "pg-essential": "^1.0.2"
   }
 }

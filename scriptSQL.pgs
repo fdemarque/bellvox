@@ -29,4 +29,4 @@ create table music (
   CONSTRAINT PK_music PRIMARY KEY (id)	
 );
 
-insert into users values (1, 'Filipe Demarque', 'demarque', 'demarque', 1);
+insert into users values (1, 'Felipe Demarque', 'demarque', '061cc646a3544bba39dcd83b4c22c724', 1);
