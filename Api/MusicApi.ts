@@ -13,9 +13,9 @@ export class MusicApi extends ApiClass {
         console.log(_NomeMusica);
         return [{
             Musica: _NomeMusica,
-            duracao: "7 min",
-            artista: "airu meida"
-        }];
+            artista: await Knex.getConnection()('music').select('artista').where('nome', 'ilike', `%${_NomeMusica}%`),
+            duracao: await Knex.getConnection()('music').select('duracao').where('nome', 'ilike', `%${_NomeMusica}%`)
+        }];        
     }
 
     Method(): TypeMethod {
