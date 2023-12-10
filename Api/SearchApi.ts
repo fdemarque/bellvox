@@ -11,6 +11,14 @@ export class SearchApi extends ApiClass {
         const Artista = Request.Artista;
         const Limit = Request.Limit ?? 10;
         const Page = Request.Page;
+        const OrderBy = Request.OrderBy;
+
+        // Validação de coluna de referência para ordenação
+        if (OrderBy != "id" && OrderBy != "nome" && OrderBy != "artista"){
+            throw "Informe uma coluna válida para ordenação"
+        }
+
+        // Montagem do resultado da busca
         let _Resultado;
         if (Name)
             _Resultado = Knex.getConnection()('music')
@@ -34,7 +42,18 @@ export class SearchApi extends ApiClass {
             _Resultado = await Knex.getConnection()('music')
                 .select('*')
         }
-        console.log(_Resultado)
+
+        //ordenação
+        if (OrderBy && _Resultado && _Resultado.length > 0) {
+            _Resultado = _Resultado.sort((a, b) => {
+                // Verifica se a coluna existe nos objetos A e B antes de comparar
+                if (a[OrderBy] && b[OrderBy]) {
+                    return a[OrderBy].localeCompare(b[OrderBy]);
+                }
+                return 0;
+            });
+        }
+
         // Paginação
         if (Page && _Resultado && _Resultado.length > 0) {
             const _TamanhoPagina = (parseInt(Page)) * parseInt(Limit)

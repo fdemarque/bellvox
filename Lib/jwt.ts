@@ -41,7 +41,7 @@ export class JWT {
                 let Opcoes = {
                     algorithm: 'HS512'
                 };
-                Opcoes["expiresIn"] = "1d";
+                Opcoes["expiresIn"] = "30m";
                 _User = JSON.parse(_User);
                 if (_User["exp"])
                     delete _User["exp"];
